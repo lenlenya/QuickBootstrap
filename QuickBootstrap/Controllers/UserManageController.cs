@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Web.Mvc;
+using Microsoft.Practices.Unity;
 using QuickBootstrap.Entities;
 using QuickBootstrap.Extendsions;
 using QuickBootstrap.Filters;
+using QuickBootstrap.Helpers;
 using QuickBootstrap.Models;
 using QuickBootstrap.Services;
 using QuickBootstrap.Services.Impl;
@@ -15,7 +17,7 @@ namespace QuickBootstrap.Controllers
     {
         #region 私有字段
 
-        private readonly IUserManageService _userManageService = new UserManageService();
+        private readonly IUserManageService _userManageService = UnityHelper.Instance.Unity.Resolve<IUserManageService>();
 
         #endregion
 
@@ -29,7 +31,7 @@ namespace QuickBootstrap.Controllers
 
         public ActionResult Create()
         {
-            var viewModel = new UserCreateRequest {IsEnable = true};
+            var viewModel = new UserCreateRequest { IsEnable = true };
 
             return View(viewModel);
         }

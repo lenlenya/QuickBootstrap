@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
+using Microsoft.Practices.Unity;
 using QuickBootstrap.Extendsions;
 using QuickBootstrap.Filters;
+using QuickBootstrap.Helpers;
 using QuickBootstrap.Models;
 using QuickBootstrap.Services;
 using QuickBootstrap.Services.Impl;
@@ -13,7 +15,7 @@ namespace QuickBootstrap.Controllers
     {
         #region private
 
-        private readonly IProfileService _profileService = new ProfileService();
+        private readonly IProfileService _profileService = UnityHelper.Instance.Unity.Resolve<IProfileService>();
 
         #endregion
 

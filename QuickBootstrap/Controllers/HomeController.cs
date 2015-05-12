@@ -1,7 +1,9 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using Microsoft.Practices.Unity;
 using QuickBootstrap.Extendsions;
 using QuickBootstrap.Filters;
+using QuickBootstrap.Helpers;
 using QuickBootstrap.Models;
 using QuickBootstrap.Services;
 using QuickBootstrap.Services.Impl;
@@ -12,7 +14,7 @@ namespace QuickBootstrap.Controllers
     {
         #region 私有字段
 
-        private readonly IManageService _manageService = new ManageService();
+        private readonly IManageService _manageService = UnityHelper.Instance.Unity.Resolve<IManageService>();
 
         #endregion
 
