@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    <kbd>
+        @ViewBag.Company
+    </kbd>
+
+</p>
+<p>
+    <a href="@Url.Action("action1","controller1")">生成一个普通链接</a>@Url.Action("action1", "controller1")
+</p>
+<p>
+    <a href="@Url.Action("action1","controller1",null,Request.Url.Scheme)">生成一个完整链接</a>@Url.Action("action1", "controller1", null, Request.Url.Scheme)
+</p>
+<p>
+    @Html.RouteLink("示例URL", "DomainRoute_Page", new { controller = "controller1", action = "action1", id = "34", pageIndex = 99, pageSize = 20, name = "C#", age = 5 })
+    @Url.RouteUrl("DomainRoute_Page", new { controller = "controller1", action = "action1", id = "34", pageIndex = 99, pageSize = 20, name = "C#", age = 5 })
+</p>

@@ -35,10 +35,9 @@
                          string.IsNullOrWhiteSpace(Request.Cookies[UserAuthorizationAttribute.CookieUserName].Value) == false &&
                         Session[Session.SessionID] != null)
                     {
-
                         //其他功能菜单
-                        
                         <li><a href="/UserManage">用户管理</a></li>
+                        <li><a href="@Url.Action("Index","SecondDomain")">二级域名</a></li>
                     }
 
                 </ul>
